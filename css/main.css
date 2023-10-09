@@ -18,8 +18,8 @@
     --footbar_height: 10vh;
     --page-position: 80%;
     --page-width:  10%;
-    --tab-gap: 2vw;
-    --tab-width: 10vw;
+    --tab-gap: 4vw;
+    --tab-width: 20vw;
     --tab-height: 5vw;
 }
 
@@ -89,16 +89,26 @@ a{
 
 /* 03: layout*/
 
+section.intro header {
+    position: fixed;
+    top: 0%;
+    width: 90%;
+    padding: 3%;
+    translate: 35%;
+
+}
+
 div.explanation, div.requirements, div.benefits, div.participation{
     position: fixed;
     top: var(--page-position);
-    width: var(--page-width);
-    bottom: 0%;
+    width: var(--tab-width);
+    background-image: url(../img/newspaper3.jpg);
     padding: 2%;
     margin: 3%;
     border:  2px solid black;
-    background-image: url(../img/newspaper3.jpg);
+    transition: all 2s ease-in-out;
     z-index: 5;
+
 }
 
 div.explanation{
@@ -116,7 +126,7 @@ div.participation{
 
 div.explanation h3,div.requirements h3,div.benefits h3, div.participation h3{ 
     text-align: center;
-    margin-top: -15%;
+    margin-top: -10%;
     width: var(--tab-width);
     height: var(--tab-height);
     background-color: var(--tab-color);
@@ -125,10 +135,11 @@ div.explanation h3,div.requirements h3,div.benefits h3, div.participation h3{
 
 aside.sidebar{
     position: absolute;
+    font-size: small;
     top: 20%;
     right: 0;
     width: 20%;
-    height: 100%;
+    height: 60%;
     z-index: 2;
 }
 
@@ -147,6 +158,17 @@ div.extra2{
 
 /* footer*/
 /* introduction*/
+footer{
+    position: fixed;
+    text-align: center;
+    top: 95%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footbar_height);
+    z-index: 7;
+
+}
 div.extra1{
     position: fixed;
     top: 0;
@@ -176,13 +198,13 @@ h3:hover{
     background-color: rgb(32, 235, 13);
 }
 
-div.requirements:hover {
-    top: 15vh;
+div.requirements:active {
+    top: 2vh;
 
 }
 
-div.explanation:hover,div.requirements:hover,div.benefits:hover, div.participation:hover{ 
-    top: 10vh;
+div.explanation:active,div.requirements:active,div.benefits:active, div.participation:active{ 
+    top: 2vh;
     width: var(--tab-width);
     height: var(--tab-height);
 }
@@ -211,3 +233,66 @@ p:nth-child(3n){
 }
 
 
+section.intro h3 ~p{
+    opacity: 1;
+    transition: all 3s ease-in-out;
+}
+
+
+
+section.intro h3:hover ~p{
+    opacity: 0;
+    transition: scale(.2)
+}
+
+
+/* animation */
+footer{
+    position: fixed;
+    
+    animation: 10s ease-in-out 2s alternate infinite moveback;
+}
+
+@keyframes moveback {
+    from{transform: translate(-500px,0);}
+    30%{transform: translate(-300px,0);}
+    50%{transform: translate(00px,0);}
+    70%{transform: translate(300px,0);}
+    90%{transform: translate(500px,0);}
+    
+}
+
+
+h2{
+    background-image: linear-gradient(black,blue,teal);
+    animation: 10s ease-in-out 2s alternate infinite changecolor ;
+}
+
+@keyframes changecolor {
+
+        from{background-image: linear-gradient(black,blue,teal);}
+        30%{transform: linear-gradient(teal,black,blue);}
+        60%{transform: linear-gradient(blue,teal,black);}
+        100%{transform: linear-gradient(black,blue,teal);}
+    
+}
+
+/* 07: fgancy fetures */
+/* section.intro{
+    clip-path: circle(70% at 50vw 50vh);
+} */
+
+aside.sidebar{
+    clip-path: polygon(0 0, 0 70%, 50% 100%, 100% 70%, 100% 0);
+}
+
+div#desgin-archives{
+display: none;
+}
+aside.sidebar h3{
+    display: none;
+}
+
+aside.sidebar ul li{
+    list-style: none;
+}
