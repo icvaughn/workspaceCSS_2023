@@ -1,0 +1,213 @@
+/* styel file created by isaac vaugh
+
+===========================================
+00: CSS variables
+01: color
+02: typofraphy
+03:
+ */
+
+
+ /* 00: css var */
+:root{
+    --page-color:hsla(467, 52%, 72%, 0.9);
+    --body-color: hsla(20, 69%, 72%, .5);
+    --sidebar-color: hsla(200, 69%, 72%, .5);
+    --footbar-color: hsla(323, 79%, 44%, 0.836);
+    --tab-color: hsla(256, 53%, 59%, 0.63);
+    --footbar_height: 10vh;
+    --page-position: 80%;
+    --page-width:  10%;
+    --tab-gap: 2vw;
+    --tab-width: 10vw;
+    --tab-height: 5vw;
+}
+
+ /* 01: color */
+html{
+    background-color: hsla(167, 52%, 72%, 0.9);
+}
+
+body{
+    background-color: var();
+    color: hsla(70, 100%, 100%, .9);
+}
+
+aside.sidebar{
+    background-color: var(--sidebar-color);
+
+}
+
+#zen-intro{
+    background-color: var(--page-color);
+}
+
+#zen-requirements{
+    background-color: var(--tab-color);
+}
+
+
+/* TYpOGRAOHY */
+
+@font-face {
+    font-family: 'chesse bugre';
+    src: url(../fonts/chunkfive.woff);
+
+}
+
+
+@font-face {
+    font-family: 'yarta';
+    src: url(../fonts/Yatra_One/YatraOne-Regular.ttf);
+
+}
+
+header h1{
+    font-family: 'chesse bugre';
+    font-weight: 400;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    line-height: 1em;
+}
+h3 {
+    font-family: 'Rancher', cursive;
+
+}
+p{
+    font-family: 'yarta';
+    font-size: small;
+}
+
+a{ 
+    text-decoration: none;
+    font-size: 1em;
+    text-align: center;
+}
+
+
+
+
+/* 03: layout*/
+
+div.explanation, div.requirements, div.benefits, div.participation{
+    position: fixed;
+    top: var(--page-position);
+    width: var(--page-width);
+    bottom: 0%;
+    padding: 2%;
+    margin: 3%;
+    border:  2px solid black;
+    background-image: url(../img/newspaper3.jpg);
+    z-index: 5;
+}
+
+div.explanation{
+    left: 0%;
+}
+div.requirements{
+    left: calc(var(--tab-width) + var(--tab-gap));
+}
+div.benefits{
+    left: calc(2*var(--tab-width) + 2*var(--tab-gap));
+}
+div.participation{
+    left: calc(3*var(--tab-width) + 3*var(--tab-gap));
+}
+
+div.explanation h3,div.requirements h3,div.benefits h3, div.participation h3{ 
+    text-align: center;
+    margin-top: -15%;
+    width: var(--tab-width);
+    height: var(--tab-height);
+    background-color: var(--tab-color);
+    border-radius: 10px 50%/50px 10%;
+}
+
+aside.sidebar{
+    position: absolute;
+    top: 20%;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    z-index: 2;
+}
+
+div.extra2{
+    position: fixed;
+    top: 90%;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--footbar_height);
+    background-color: var(--footbar-color);
+    z-index: 6;
+
+}
+
+
+/* footer*/
+/* introduction*/
+div.extra1{
+    position: fixed;
+    top: 0;
+    left: 45%;
+    width: 30%;
+    height: 80%;
+    padding: 2%;
+    background-image: url(../img/newspaper3.jpg);
+    z-index: 1;
+    transform: rotate(-20%);
+}
+section.intro{
+    position: fixed;
+    top: 0;
+    left: 30%;
+    width: 30%;
+    height: 80%;
+    padding: 2%;
+    background-image: url(../img/newspaper3.jpg);
+    z-index: 3;
+    transform: rotate(40%) translate(-100px);
+}
+
+/* 04: other declrations*/
+
+h3:hover{
+    background-color: rgb(32, 235, 13);
+}
+
+div.requirements:hover {
+    top: 15vh;
+
+}
+
+div.explanation:hover,div.requirements:hover,div.benefits:hover, div.participation:hover{ 
+    top: 10vh;
+    width: var(--tab-width);
+    height: var(--tab-height);
+}
+
+a:hover{
+    font-size: 1.2em;
+    text-indent: -100;
+}
+
+a:active{
+    color:  rgb(168, 110, 23);
+}
+
+li::first-letter{
+    font-size: larger;
+
+}
+
+
+p:nth-child(2n){
+    background-color: hsla(135, 86%, 44%, 0.26);
+}
+
+p:nth-child(3n){
+    background-color: hsla(0, 78%, 43%, 0.267);
+}
+
+
